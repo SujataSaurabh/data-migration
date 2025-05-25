@@ -12,8 +12,8 @@ This application migrates data from a 4D database to PostgreSQL, handling schema
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd data_migration
+git clone https://github.com/sujatagoswami/data-migration.git
+cd data-migration
 ```
 
 2. Install required Python packages:
@@ -55,6 +55,7 @@ data_migration/
 ├── generate_insert_sql.py     # SQL insert generation
 ├── export_as_csv.py          # CSV export functionality
 ├── unicode_converter.py      # Special character handling
+├── send_email.py            # Email notification handling
 ├── run_data_migration.sh     # Shell script for automation
 ├── config_local_macbook.ini  # Configuration file
 └── logs/                     # Log directory
@@ -94,6 +95,14 @@ The application sends email notifications to sujata.saur@gmail.com for:
 - Configuration errors
 - Missing file errors
 
+To set up email notifications:
+1. Enable 2-Step Verification in your Google Account
+2. Generate an App Password for the application
+3. Set the environment variable:
+```bash
+export GMAIL_APP_PASSWORD='your-16-character-app-password'
+```
+
 ## Logging
 
 - Logs are stored in the `logs/` directory
@@ -113,7 +122,7 @@ The application sends email notifications to sujata.saur@gmail.com for:
    - Check execute permissions on shell script
 
 3. **Email Notification Issues**
-   - Verify mail command is installed: `which mail`
+   - Verify Gmail App Password is set correctly
    - Check email configuration
    - Verify email address is correct in script
 
